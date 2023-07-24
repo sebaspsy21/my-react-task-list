@@ -16,11 +16,11 @@ return (
 <div>
 <Header titulo1="My task list"/>
 <form onSubmit={(e)=>{addTask(e)}}>
-<input value={task}/>
-<button type='submit'>Add new task</button>
+<input value={task} onChange={(e)=>setTask(e.target.value)}/>
+<button >Add task</button>
 </form>
 <TaskList  myArray= {arrayTask}/>
-
+<button className='boton todo'>Clear all</button>
 </div>
 )
 }
