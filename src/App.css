@@ -40,17 +40,13 @@
 .read-the-docs {
   color: #888;
 }
+
 .task {
   display: flex;
-text-align: center;  
-position: relative;
-left: 50px;
-border: 10px;
-border-radius: 20px;
-border:1px solid blueviolet;
-background-color:grey;
-
-}
-.state {
-  margin-left: 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  border: 1px solid blueviolet;
+  border-radius: 8px;
+  margin-bottom: 4px;
 }

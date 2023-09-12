@@ -1,4 +1,4 @@
-function Header(props) {
+ export function Header(props) {
     const {titulo1} = props
     return(
     <div>
@@ -6,4 +6,3 @@ function Header(props) {
      </div>
      )
 }
-export default Header

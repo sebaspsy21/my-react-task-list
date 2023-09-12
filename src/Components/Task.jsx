@@ -1,16 +1,32 @@
-function Task (props) {
-return(
-<div className="task">
-<input type="checkbox"/>
-<h5>{props.name}</h5>
-<p>{props.description}</p>
-<p className="state">{props.state}</p>
-<button>Eliminar</button>
-<button>Editar</button>
-</div>
+import { useState } from "react";
 
-
-)
+ export function Task (item) {
+const { task, onDelete, onEditTask} = item;
+const [edit, setEdit] = useState (false) 
+function eliminar () {
+  onDelete(task.id)
 }
-
-export default Task
+function editar() {
+  /*onEditTask(task.id)*/
+  setEdit(true)
+}
+if (edit) {
+ return <div>
+  <input value={task.name}/>
+  <input value={task.description}/>
+  <button onClick={()=>setEdit(false) }>save</button>
+  </div> 
+} else{
+return(
+<div>
+      <li className="task">
+        <input type="checkbox" />
+        <h4>{task.name}</h4>
+        <p>{task.description}</p>
+        <button onClick={eliminar}>Eliminar</button>
+        <button onClick={editar}>Editar</button>
+      </li>
+    </div>
+  );
+}
+}
